@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+Manifest-Version: 1.0
+Created-By: 1.7.0_151 (Oracle Corporation)
+
+=======
+Manifest-Version: 1.0
+Created-By: 1.7.0_151 (Oracle Corporation)
+
+>>>>>>> 093657dea6420a6fc3ffe42e51947c8389bc64e1
