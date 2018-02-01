@@ -56,12 +56,12 @@ public class FastCollinearPoints {
 			for (int i=0; i < pointsCopy.length-1; i++) {			
 				slope = pointsCopy[i].slopeTo(pointsCopy[i+1]);
 				
-				if (!inSegment && slope_ant == slope && i > 0) {				
+				if (!inSegment && Double.compare(slope_ant, slope) == 0  && i > 0) {				
 					pFirst = pointsCopy[i-1];
 					inSegment = true;
 					pointsInSegment++;
 				
-				} else if (inSegment && (slope_ant != slope || (i == pointsCopy.length - 2)) ) {				
+				} else if (inSegment && (Double.compare(slope_ant, slope) != 0 || (i == pointsCopy.length - 2)) ) {				
 					pLast = pointsCopy[i];
 					pointsInSegment = pointsInSegment + 2;
 					inSegment = false;
@@ -69,7 +69,7 @@ public class FastCollinearPoints {
 						segAux.add(new LineSegment(pFirst, pLast));
 					pointsInSegment = 0;
 					
-				} else if (inSegment && slope_ant == slope) {			
+				} else if (inSegment && Double.compare(slope_ant, slope) == 0) {			
 					pointsInSegment++;
 				
 				}
